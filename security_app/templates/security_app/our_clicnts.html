@@ -1,0 +1,96 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">Our Clicnts</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>Our Clicnts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <section class="news-section our-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div>
+
+    </section>
+
+    
+{% endblock content %}

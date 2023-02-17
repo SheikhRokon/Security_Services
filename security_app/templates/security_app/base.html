@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+{% load static %}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Delta-one security.</title>
+
+<!-- Stylesheets -->
+<link href="{% static 'security_app/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'security_app/css/responsive.css' %}" rel="stylesheet">
+<link rel="icon" href="{% static 'security_app/images/favicon.ico' %}" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+
+</head>
+
+<!-- page wrapper -->
+<body class="boxed_wrapper">
+
+
+    <!-- .preloader -->
+    <!-- <div class="preloader"></div> -->
+    <!-- /.preloader -->
+
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <!-- header-top -->
+        <div class="header-top">
+            <div class="container clearfix">
+                <div class="top-left">
+                    <ul class="social clearfix">
+                        {% for i in g_contact %}
+                        <li><a href="{{ i.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ i.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ i.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="{{ i.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% for i in g_contact %}
+                <div class="top-right clearfix">
+                    <ul class="clearfix">
+                        <li class="upper-column">
+                            <i class="fa fa-phone-volume"></i>
+                            Call Us!: <a href="tel:0800546432">{{ i.phone }}</a>
+                        </li>
+                        <li class="upper-column">
+                            <i class="fa fa-envelope-square"></i>
+                            <a href="mailto:support@example.com">{{ i.email }}</a>
+                        </li>
+                        <li class="upper-column">
+                            <a href="#" class="upper-btn">Get Security Estimate</a>
+                        </li>
+                    </ul>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div><!-- header-top end -->
+
+        <!-- header-bottom -->
+        <div class="container">
+            <div class="header-bottom">
+                <div class="nav-outer clearfix">
+                    <div class="logo-outer">
+                        <figure class="logo-box"><a href="{% url 'index-page' %}"><img src="{% static 'security_app/images/logo.png' %}" alt=""></a></figure>
+                    </div>
+                    <div class="menu-area clearfix">
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-header">
+                                <!-- Toggle Button -->      
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                                    
+                                    <li class="dropdown"><a href="#">About</a>
+                                        <ul>
+                                            <li><a href="{% url 'about-page' %}">About Us </li>
+                                            <li><a href="{% url 'blog-page' %}">Our Blog </li>
+                                            <li><a href="{% url 'board_of_directors-page' %}">Board of Directors</li>
+                                            <li><a href="{% url 'management_term-page' %}">Management Team </a></li>
+                                            <li><a href="{% url 'our_clicnts-page' %}">Our Clicnts </a></li>
+                                            <li><a href="{% url 'clicnts_testimonials-page' %}">Clicnts Testimonials </a></li>
+                                            <li><a href="{% url 'contract_signing-page' %}">Contract signing </a></li>
+                                            <li><a href="{% url 'history-page' %}">History</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#">SERVICES</a>
+                                        <ul>
+       
+                                            {% for i in g_service_s %}
+                                            <li><a href="service.html">{{ i.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'news-page' %}">News</a></li>
+                                    <li><a href="{% url 'csr-page' %}">CSR </a></li>
+                                    <li class="dropdown"><a href="#">Media</a>
+                                        <ul>
+                                            <li><a href="{% url 'photo_gallery-page' %}">Photo Gallery</a></li>
+                                            <li><a href="{% url 'video_gallery-page' %}">Video Gallery</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#">Get IN Touch</a>
+                                        <ul>
+                                            <li><a href="">Career </a></li>
+                                            <li><a href="">Notice </a></li>
+                                            <li><a href="">Certifieate Verifications </a></li>
+                                        </ul>
+                                    </li>
+                                   
+                                    <li><a href="{% url 'contact-page' %}">Contact Us </a></li>
+
+
+
+
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="outer-box">
+                            <div class="search-outer">
+                                <div class="search-box-area">
+                                    <div class="search-toggle"><i class="fa fa-search"></i></div>
+                                    <div class="search-box">
+                                        <form method="post" action="http://azim.commonsupport.com/ZenRaiford/index.html">
+                                            <div class="form-group">
+                                                <input type="search" name="search" placeholder="Search Here" required>
+                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- header-bottom end -->
+
+
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="container clearfix">
+                <figure class="logo-box"><a href="index.html"><img src="{% static 'security_app/images/small-logo.png' %}" alt=""></a></figure>
+                <div class="menu-area">
+                    <nav class="main-menu navbar-expand-lg">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->      
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="navbar-collapse collapse clearfix">
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                                    
+                                    <li class="dropdown"><a href="#">About</a>
+                                        <ul>
+                                            <li><a href="{% url 'about-page' %}">About Us </li>
+                                            <li><a href="{% url 'blog-page' %}">Our Blog </li>
+                                            <li><a href="{% url 'board_of_directors-page' %}">Board of Directors</li>
+                                            <li><a href="{% url 'management_term-page' %}">Management Team </a></li>
+                                            <li><a href="{% url 'our_clicnts-page' %}">Our Clients </a></li>
+                                            <li><a href="{% url 'clicnts_testimonials-page' %}">Clients Testimonials</a></li>
+                                            <li><a href="{% url 'contract_signing-page' %}">Contract signing </a></li>
+                                            <li><a href="{% url 'history-page' %}">History</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="#">SERVICES</a>
+                                        <ul>
+       
+                                            {% for i in g_service_s %}
+                                            <li><a href="service.html">{{ i.title }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'news-page' %}">News</a></li>
+                                    <li><a href="{% url 'csr-page' %}">CSR </a></li>
+                                    <li><a href="{% url 'career-page' %}">Career </a></li> 
+                                    <li class="dropdown"><a href="#">Media</a>
+                                        <ul>
+                                            <li><a href="{% url 'photo_gallery-page' %}">Photo Gallery</a></li>
+                                            <li><a href="{% url 'video_gallery-page' %}">Video Gallery</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="{% url 'contact-page' %}">Contact Us </a></li>
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div><!-- sticky-header end -->
+    </header>
+    <!-- End Main Header -->
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- footer-section -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                
+                <div class="row">
+                    {% for i in g_contact %}
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="logo-widget footer-widget wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <figure class="footer-logo"><a href="index.html"><img style="height: 218px; height: 40px; overflow: hidden; " src="{{ i.image.url }}" alt=""></a></figure>
+                            <div style="height: 262.5px; height: 78px; overflow: hidden; " class="text">{{ i.detalis }}</div>
+                            <ul class="info-box">
+                                <li style="height: 262.5px; height: 26.5px; overflow: hidden; " >Phone <a href="{{ i.phone }}">{{ i.phone }}</a></li>
+                                <li>Email <a href="{{ i.email }}">{{ i.email }}</a></li>
+                            </ul>
+                            <div style="height: 262.5px; height: 48px; overflow: hidden; " class="address">{{ i.address }}</div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column"  style="width: 292.5px;height: 291px; overflow: hidden; "  >
+                        <div class="service-widget footer-widget wow fadeInUp" data-wow-delay="250ms" data-wow-duration="1500ms">
+                            <div class="footer-title"><h4>Our Services</h4></div>
+                            <ul class="service-list">
+                                {% for i in g_service_s %}
+                                <li><a href="#">{{ i.title }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column" style="width: 292.5px;height: 291px; overflow: hidden; " >
+                        <div class="post-widget footer-widget wow fadeInUp" data-wow-delay="500ms">
+                            <div class="footer-title"><h4>Recent News</h4></div>
+                            {% for i in g_news %}
+                            <div class="post">
+                                <div class="text"><a href="blog-details.html">{{ i.title }}</a></div>
+                                <div class="post-date">{{ i.date }}</div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                        <div class="newsletter-widget footer-widget wow fadeInUp" data-wow-delay="750ms">
+                            <div class="footer-title"><h4>Newsletter</h4></div>
+                            <div class="text">Get all the latest security & Threat  news and about Deltaone-security.</div>
+                            <div class="newsletter-form">
+                                <form action="http://azim.commonsupport.com/ZenRaiford/contact.html" method="post">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email" required="">
+                                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <ul class="footer-social clearfix">
+                                {% for i in g_contact %}
+                                <li><a href="{{ i.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="{{ i.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="{{ i.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="{{ i.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom centred">
+            <div class="container">
+                <div> </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-section end -->
+
+
+
+<!--Scroll to top-->
+<button class="scroll-top scroll-to-target" data-target="html">
+    <span class="fa fa-arrow-up"></span>
+</button>
+
+
+
+<!-- jequery plugins -->
+<script src="{% static 'security_app/js/jquery.js' %}"></script>
+<script src="{% static 'security_app/js/popper.min.js' %}"></script>
+<script src="{% static 'security_app/js/bootstrap.min.js' %}"></script>
+
+<script src="{% static 'security_app/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'security_app/js/wow.js' %}"></script>
+<script src="{% static 'security_app/js/validation.js' %}"></script>
+<script src="{% static 'security_app/js/isotope.js' %}"></script>
+<script src="{% static 'security_app/js/html5lightbox/html5lightbox.js' %}"></script>
+<script src="{% static 'security_app/js/jquery-ui.js' %}"></script>
+<script src="{% static 'security_app/js/jquery.appear.js' %}"></script>
+<script src="{% static 'security_app/js/jquery.countTo.js' %}"></script>
+
+<!-- map script -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBevTAR-V2fDy9gQsQn1xNHBPH2D36kck0"></script>
+<script src="{% static 'security_app/js/gmaps.js' %}"></script>
+<script src="{% static 'security_app/js/map-helper.js' %}"></script>
+
+<!-- main-js -->
+<script src="{% static 'security_app/js/script.js' %}"></script>
+
+</body><!-- End of .page_wrapper -->
+
+
+</html>

@@ -1,0 +1,194 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">Blog Details</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <!-- blog-details -->
+    <section class="blog-details sidebar-page-container sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="blog-details-content">
+                        <div class="content-style-one">
+                            <figure class="image-box"><img src="images/resource/news-details.jpg" alt=""></figure>
+                            <ul class="post-meta">
+                                <li><i class="far fa-folder-open"></i>ZenForce</li>
+                                <li><i class="far fa-calendar-alt"></i>26 Mar</li>
+                                <li><i class="far fa-comment-dots"></i>150</li>
+                            </ul>
+                            <h2 class="title">How to Quickly Respond to Attacks</h2>
+                            <div class="text">
+                                <p>On the other hand, we denounce with righteous indignation and dislike men who are beguiled demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled.</p>
+                                <p>When secure thing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of dutys the obligations of busines it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man there fore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures or else he endures security.</p>
+                            </div>
+                        </div>
+                        <div class="content-style-two">
+                            <div class="inner-content">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                                        <figure class="image-box"><img src="images/resource/blog-details2.jpg" alt=""></figure>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                                        <div class="text">
+                                            <p>Certain circumstances and owing to the claims of duty or the obligations of business will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures.</p>
+                                            <p>Secure other greater pleasures, or else he endures pains to avoid worse pains. But I must explain you how all this mistaken idea of denouncing pleasue</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">Our SecurityGuards that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrink ing from toil and pain. These cases are perfectly simple and easy to distinguish. In free hour, when our power when nothing prevents our being able to do what we like best.</div>
+                        </div>
+                        <div class="post-share-option">
+                            <div class="post-share-inner clearfix">
+                                <ul class="tags">
+                                    <li><span>Post Tags:</span></li>
+                                    <li><a href="#">Security</a>,</li>
+                                    <li><a href="#">Guards</a>,</li>
+                                    <li><a href="#">Protection</a></li>
+                                </ul>
+                                <ul class="post-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="author-box">
+                            <figure class="author-image"><img src="images/resource/author.jpg" alt=""></figure>
+                            <h4 class="author-name">Denial Henry</h4>
+                            <div class="text">The wise man therefore always holds security these matters this principle of selection he rejects pleasures to secure other greater pleasures protection else he endures pains to avoid.</div>
+                            <div class="link"><a href="#">View More Posts</a></div>
+                        </div>
+                        <div class="comments-area">
+                            <h2 class="group-title">Comments</h2>
+                            <div class="comment-box">
+                                <div class="comment">
+                                    <figure class="author-thumb"><img src="images/resource/comment-1.png" alt=""></figure>
+                                    <div class="comment-inner">
+                                        <h4 class="comment-name">Henry Davis</h4>
+                                        <div class="time">Posted: 01 Jan, 2019 at 8:40 PM</div>
+                                        <div class="text">Always holds security these matters this principle of selection he rejects pleasures to secure other greater pleasure protection else he endures pains to avoid praising.</div>
+                                        <div class="replay-btn"><a href="#">Reply</a></div>
+                                    </div>
+                                </div>
+                                <div class="comment">
+                                    <figure class="author-thumb"><img src="images/resource/comment-2.png" alt=""></figure>
+                                    <div class="comment-inner">
+                                        <h4 class="comment-name">Maria Taylor</h4>
+                                        <div class="time">Posted: 10 Jan, 2019 at 9:40 PM</div>
+                                        <div class="text">Always holds security these matters this principle of selection he rejects pleasures to secure other greater pleasure protection else he endures pains to avoid praising.</div>
+                                        <div class="replay-btn"><a href="#">Reply</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments-form">
+                            <h2 class="group-title">Post a Reply</h2>
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                        <input type="text" name="name" placeholder="Full Name" required="">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 form-group">
+                                        <input type="email" name="email" placeholder="Email address" required="">
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <textarea name="message" placeholder="Message" required=""></textarea>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                        <button type="submit">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    <div class="sidebar default-sidebar-content">
+                        <div class="sidebar-search sidebar-widget">
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" placeholder="Search" required="">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="sidebar-categories sidebar-widget">
+                            <div class="sidebar-title"><h4>Blog Categories</h4></div>
+                            <ul class="categories-list">
+                                <li><a href="#">Security Guards <span>[65]</span></a></li>
+                                <li><a href="#">Networks Protection <span>[3]</span></a></li>
+                                <li><a href="#">Construction Security <span>[94]</span></a></li>
+                                <li><a href="#">Canine Security <span>[127]</span></a></li>
+                                <li><a href="#">Hacking Attacks <span>[2]</span></a></li>
+                                <li><a href="#">Alarm Monitoring <span>[18]</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-post sidebar-widget">
+                            <div class="sidebar-title"><h4>Recent Post</h4></div>
+                            <div class="post">
+                                <figure class="post-thumb"><a href="blog-details.html"><img src="images/resource/post-1.jpg" alt=""></a></figure>
+                                <div class="post-info">Jan 01, 2019</div>
+                                <h5><a href="blog-details.html">How we tighten the Events Security</a></h5>
+                            </div>
+                            <div class="post">
+                                <figure class="post-thumb"><a href="blog-details.html"><img src="images/resource/post-2.jpg" alt=""></a></figure>
+                                <div class="post-info">Jan 10, 2019</div>
+                                <h5><a href="blog-details.html">Zen Guards are so Tough to Beat</a></h5>
+                            </div>
+                            <div class="post">
+                                <figure class="post-thumb"><a href="blog-details.html"><img src="images/resource/post-3.jpg" alt=""></a></figure>
+                                <div class="post-info">Jan 12, 2019</div>
+                                <h5><a href="blog-details.html">We are offering Training & Courses</a></h5>
+                            </div>
+                        </div>
+                        <div class="sidebar-call sidebar-widget centred">
+                            <div class="icon-box"><i class="flaticon-telephone"></i></div>
+                            <div class="text">Got any Questions?<br />CALL US NOW</div>
+                            <h3 class="phone"><a href="tel:0800-546-432">0800-546-432</a></h3>
+                            <div class="email"><a href="mailto:support@example.com">support@example.com</a></div>
+                            <div class="link"><a href="#">Get Free Estimate</a></div>
+                        </div>
+                        <div class="sidebar-tags sidebar-widget">
+                            <div class="sidebar-title"><h4>Tags</h4></div>
+                            <ul class="tag-list">
+                                <li><a href="#">Security</a>,</li>
+                                <li><a href="#">Guards</a>,</li>
+                                <li><a href="#">Manned</a>,</li>
+                                <li><a href="#">Guarding</a>,</li>
+                                <li><a href="#">Protection</a>,</li>
+                                <li><a href="#">Network</a>,</li>
+                                <li><a href="#">Threats</a>,</li>
+                                <li><a href="#">Canine</a>,</li>
+                                <li><a href="#">Mobile</a>,</li>
+                                <li><a href="#">Security</a>,</li>
+                                <li><a href="#">Patroling</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog-details end -->
+
+    {% endblock content %}    
+

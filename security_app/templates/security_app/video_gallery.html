@@ -1,0 +1,68 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">Video Gallery</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>Video Gallery</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <section class="news-section our-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto ">
+                    <div class="video-gallery wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <img src="{% static 'security_app/images/resource/video-img.jpg' %}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
+                        <div class="overlay-gallery">
+                            <div class="icon-holder">
+                                <div class="icon" style="width: 555px; height: 271px; " >
+                                    <a class="html5lightbox" title="Video" href="{{ i.Video_link }}"><i class="fa fa-play"></i></a> 
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto ">
+                    <div class="video-gallery wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <img src="{% static 'security_app/images/resource/video-img.jpg' %}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
+                        <div class="overlay-gallery">
+                            <div class="icon-holder">
+                                <div class="icon" style="width: 555px; height: 271px; " >
+                                    <a class="html5lightbox" title="Video" href="{{ i.Video_link }}"><i class="fa fa-play"></i></a> 
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto ">
+                    <div class="video-gallery wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <img src="{% static 'security_app/images/resource/video-img.jpg' %}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
+                        <div class="overlay-gallery">
+                            <div class="icon-holder">
+                                <div class="icon" style="width: 555px; height: 271px; " >
+                                    <a class="html5lightbox" title="Video" href="{{ i.Video_link }}"><i class="fa fa-play"></i></a> 
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    
+{% endblock content %}

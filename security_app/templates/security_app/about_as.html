@@ -1,0 +1,214 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">About us</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>About us</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <!-- feature-section -->
+    <section class="feature-section centred">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-column">
+                    <div class="feature-block-one wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="icon-box"><i class="flaticon-lock"></i></div>
+                        <div class="lower-content">
+                            <h3><a href="#">24 Hours Security</a></h3>
+                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain bound to ensue equal blame.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-column">
+                    <div class="feature-block-one wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <div class="icon-box zoomIn" data-wow-delay="300ms" data-wow-duration="1500ms"><i class="flaticon-rain"></i></div>
+                        <div class="lower-content">
+                            <h3><a href="#">Free Quote Survey</a></h3>
+                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain bound to ensue equal blame.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 feature-column">
+                    <div class="feature-block-one wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="icon-box zoomIn" data-wow-delay="600ms" data-wow-duration="1500ms"><i class="flaticon-security-guard"></i></div>
+                        <div class="lower-content">
+                            <h3><a href="#">Dedicaed Guards</a></h3>
+                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain bound to ensue equal blame.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- feature-section end -->
+
+
+    <!-- security-information -->
+    <section class="security-information sec-pad">
+        <div class="container">
+           
+            {% for i in g_service_info  %}
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <figure class="image-box wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1000ms"><img src="{{ i.image.url }}" alt=""></figure>
+                </div>
+               
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="information-content">
+                        <div class="top-content">
+                            <div class="top-text">{{ i.top_text }}</div>
+                            <h2 class="information-title">We offers security solutions including <span>{{ i.information_title }}</span></h2>
+                            <div class="text">{{ i.detalis }}</div>
+                            <div class="list-content">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 list-column">
+                                        <ul class="list">
+                                            {% for i in g_Gave_Protection_L %}
+                                            <li>{{ i.title }}</li>
+                                            {% endfor %}
+                                            
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 list-column">
+                                        <ul class="list">
+                                            {% for i in g_Gave_Protection_R %}
+                                            <li>{{ i.title }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-content">
+                            {% for i in g_Skill %}
+                            <div class="single-progress-box">
+                                <div class="text">{{ i.skill_name }}</div>
+                                <div class="progress" data-value="{{ i.skill_level }}">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ i.skill_level }}" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="value-holder"><span class="value"></span>%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}
+           
+        </div>
+    </section>
+    <!-- security-information end -->
+
+
+    <!-- cta-section -->
+    <section class="cta-section centred" style="background-image: url(images/background/cta-bg.jpg);">
+        <div class="container">
+            <div class="cta-content">
+                <h1 class="title">Protecting Your People , Property & Life</h1>
+                <div class="text">Our customers everywhere trust our fully accredited and tailored solutions<br />On the other hand we denounce with righteous indignation</div>
+                <div class="link">
+                    <a href="#" class="btn-style-one wow slideInUp" data-wow-delay="0ms" data-wow-duration="1000ms">Learn More</a>
+                    <a href="#" class="btn-style-one wow slideInUp" data-wow-delay="0ms" data-wow-duration="1300ms">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cta-section end -->
+
+
+    <!-- team-section -->
+    <section class="team-section centred sec-pad">
+        <div class="container">
+            <div class="title-box">
+                <div class="sec-title"><h2>team of expert guards</h2></div>
+                <div class="title-text">Strategies ensure proactive domination</div>
+            </div>
+            <div class="row">
+                {% for i in g_Team_section %}
+                <div class="col-lg-3 col-md-6 col-sm-12 team-column">
+                    <div class="single-team-content overlay-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <figure class="image-box">
+                            <img src="{{ i.image.url }}" alt="">
+                            <div class="overlay">
+                                <div class="wrapper">
+                                    <div class="top-content">
+                                        <h4 class="name"><a href="#">{{ i.name }} </a></h4>
+                                        <span>{{ i.titel }}</span>
+                                    </div>
+                                    <div class="text">
+                                        {{ i.detalis }}
+                                    </div>
+                                    <ul class="list">
+                                        <li><a href="{{ i.twitter_link }}"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="{{ i.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="{{ i.google_plus_link }}"><i class="fab fa-google-plus-g"></i></a></li>
+                                    </ul>
+                                </div>                                    
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="link-btn wow slideInUp" data-wow-delay="0ms" data-wow-duration="1000ms"><a href="#">Meet All Experts</a></div>
+        </div>
+    </section>
+    <!-- team-section end -->
+
+
+    <!-- brand-section -->
+    <section class="brand-section gray-bg sec-pad">
+        <div class="container">
+            <div class="inner-content clearfix">
+                <div class="title-box">
+                    <div class="title"><h2>ACCREDITATIONS</h2></div>
+                    <div class="text">Strategies ensure proactive</div>
+                </div>
+                <div class="brand-content wow zoomIn animated">
+                    <ul class="brand-list clearfix">
+                        {% for i in g_Brand_section_Add %} 
+                        <li class="image-box"><figure><a href="{{ i.company_link }}"><img src="{{ i.logo.url }}" alt=""></a></figure></li>
+                        {% endfor %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- brand-section end -->
+
+
+    <!-- call-to-action -->
+    <section class="call-to-action" style="background-image: url(images/background/call-action.jpg);">
+        <div class="container">
+            <div class="inner-content clearfix">
+                {% for i in g_contact %}
+                <div class="call-content wow zoomIn animated">
+                    <div class="icon-box"><i class="fa fa-phone-volume"></i></div>
+                    <h2 class="title">Dedicated Security Services, Call <a href="{{ i.phone }}">{{ i.phone }}</a></h2>
+                    <div class="text">Our customers everywhere trust our fully accredited and tailored guard solutions</div>
+                </div>
+                {% endfor %}
+                <div class="link wow slideInUp" data-wow-delay="0ms" data-wow-duration="1000ms"><a href="#" class="btn-style-one">Get Security Estimate</a></div>
+            </div>
+        </div>
+    </section>
+    <!-- call-to-action end -->
+
+{% endblock content %}

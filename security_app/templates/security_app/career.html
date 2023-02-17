@@ -1,0 +1,54 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">Career</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>Career</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+    <div class="container">
+        <div class="title-box centred">
+            <div class="sec-title"><h3>We Encourage All Candidates <br> To Seek Opportunities for Employment</h3></div>
+            
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 my-4 mx-auto news-column "  >
+                <div class="card" style="width: 20rem;">
+                    <div style="width: 15px; height: 3px;  margin-bottom: 60px; margin-top: 8px; margin-left: 8px;  " ><button type="button"  style="width: 82.56px; height: 31px; " class="btn btn-secondary btn-sm ">Full TIME</div>
+                    <div class=" my-4 mx-2 "  ><h3>Executive- Corporate Corporate Sales</h3></div>
+                    <div class="card-body">
+                      <h5 class="card-title"><li><i class="fa-solid fa-briefcase"></i> 8 Open Position</li></h5>
+                      <p class="card-text"><i class="fa-regular fa-clock"></i> Apply until 08 Dec,2023</p>
+                      <a href="#" class="btn btn-primary" style="margin-top: 20px;" >View Details</a>
+                    </div>
+                  </div>
+            </div>
+           
+            </div>
+        </div>
+    </div>
+
+    <!-- news-section -->
+    <section class="news-section our-blog">
+        <div class="container">
+            
+           
+        </div>
+    </section>
+    <!-- news-section end -->
+
+
+
+ {% endblock content %}  

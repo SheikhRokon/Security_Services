@@ -24,17 +24,20 @@
             
         </div>
         <div class="row">
+            
+            {% for i in job_post %}
             <div class="col-lg-4 col-md-6 col-sm-12 my-4 mx-auto news-column "  >
                 <div class="card" style="width: 20rem;">
-                    <div style="width: 15px; height: 3px;  margin-bottom: 60px; margin-top: 8px; margin-left: 8px;  " ><button type="button"  style="width: 82.56px; height: 31px; " class="btn btn-secondary btn-sm ">Full TIME</div>
-                    <div class=" my-4 mx-2 "  ><h3>Executive- Corporate Corporate Sales</h3></div>
+                    <div style="width: 15px; height: 3px;  margin-bottom: 60px; margin-top: 8px; margin-left: 8px; " ><button type="button"  style="width: 82.56px; height: 31px; " class="btn btn-secondary btn-sm ">{{ i.jop_type }}</div>
+                    <div class=" my-4 mx-auto" style="width: 318px; height: 60px;" ><h3 style="text-align: center;" >{{ i.job_position }}</h3></div>
                     <div class="card-body">
-                      <h5 class="card-title"><li><i class="fa-solid fa-briefcase"></i> 8 Open Position</li></h5>
-                      <p class="card-text"><i class="fa-regular fa-clock"></i> Apply until 08 Dec,2023</p>
+                      <h5 class="card-title"><li><i class="fa-solid fa-briefcase"></i> {{ i.vacancy }} Open Position</li></h5>
+                      <p class="card-text"><i class="fa-regular fa-clock"></i> Apply until {{ i.last_date_of_application }}</p>
                       <a href="#" class="btn btn-primary" style="margin-top: 20px;" >View Details</a>
                     </div>
                   </div>
             </div>
+            {% endfor %}
            
             </div>
         </div>

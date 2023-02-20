@@ -1,0 +1,107 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">Blog Details</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <!-- blog-details -->
+    <section class="blog-details sidebar-page-container sec-pad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="blog-details-content">
+                        <div class="content-style-one">
+                            <figure class="image-box"><img style="width: 750px; height: 450px;" src="{{ news_details.image.url }}" alt=""></figure>
+                            <ul class="post-meta">
+                                <li><i class="far fa-folder-open"></i>Delta-One</li>
+                                <li><i class="far fa-calendar-alt"></i>{{ news_details.date }}</li>
+                            </ul>
+                            <h2 class="title">{{ news_details.title }}</h2>
+                            <div class="text">
+                                <p>{{ news_details.detalis }}</p>
+                            </div>
+                        </div>
+                        <div class="content-style-two">
+                            <div class="inner-content">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                                        <figure class="image-box"><img src= "{% static 'security_app/images/resource/blog-details2.jpg' %}"  alt=""></figure>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                                        <div class="text">
+                                            <p>Certain circumstances and owing to the claims of duty or the obligations of business will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures.</p>
+                                            <p>Secure other greater pleasures, or else he endures pains to avoid worse pains. But I must explain you how all this mistaken idea of denouncing pleasue</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text">Our SecurityGuards that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrink ing from toil and pain. These cases are perfectly simple and easy to distinguish. In free hour, when our power when nothing prevents our being able to do what we like best.</div>
+                        </div>
+                        <div class="post-share-option">
+                            <div class="post-share-inner clearfix">
+                                <ul class="tags">
+                                    <li><span>Post Tags:</span></li>
+                                    <li><a href="#">Security</a>,</li>
+                                    <li><a href="#">Guards</a>,</li>
+                                    <li><a href="#">Protection</a></li>
+                                </ul>
+                                <ul class="post-social">
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    <div class="service-sidebar-content">
+                        <div class="sidebar-categories wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms" style="width: 350px;height: 344px; overflow: hidden;" >
+                            
+                            <div class="sidebar-title"><h4>Our Services</h4></div>
+                            {% for i in g_service_s %}
+                                <ul class="categories-list">
+                                    <li><a href="manned-guarding.html">{{ i.title }}</a></li>
+                                </ul>
+                            {% endfor %}
+                                
+                            
+                        </div>
+                        
+                            <div class="sidebar-call centred wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="icon-box"><i class="flaticon-telephone"></i></div>
+                                <div class="text">Got any Questions?<br />CALL US NOW</div>
+                                {% for i in g_contact %}
+                                <h3 class="phone"><a href="{{ i.phone }}">{{ i.phone }}</a></h3>
+                                <div class="email"><a href="{{ i.email }}">{{ i.email }}</a></div>
+                                {% endfor %}
+                                <div class="link"><a href="#">Get Free Estimate</a></div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog-details end -->
+    
+
+    {% endblock content %}    
+

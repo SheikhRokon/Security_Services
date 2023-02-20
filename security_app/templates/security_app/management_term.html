@@ -1,4 +1,3 @@
-
 {% extends 'security_app/base.html' %}
 
 {% load static %}
@@ -21,126 +20,69 @@
     <!-- page-title end -->
 
 
-    <!-- service-section -->
-    <section class="service-style-two service-page">
+    <!-- management term -->
+    <section class="service-details">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12 service-column">
-                    <div class="service-block-one overlay-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <img src="images/resource/service-7.jpg" alt="">
-                            <div class="overlay">
-                                <div class="wrapper">
-                                    <ul class="list">
-                                        <li><a href="manned-guarding.html"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>                                    
-                            </div>
-                        </figure>
-                        <div class="lower-content">
-                            <h3><a href="manned-guarding.html">Crowd Management</a></h3>
-                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain  bound to ensue equal blame.</div>
-                            <div class="link"><a href="manned-guarding.html" class="btn-style-two">More Details</a></div>
+                <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                    <div class="service-sidebar-content">
+                        <div class="sidebar-categories wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms" style="width: 350px;height: 344px; overflow: hidden;" >
+                            
+                            <div class="sidebar-title"><h4>Our Services</h4></div>
+                            {% for i in g_service_s %}
+                                <ul class="categories-list">
+                                    <li><a href="manned-guarding.html">{{ i.title }}</a></li>
+                                </ul>
+                            {% endfor %}
+                                
+                            
                         </div>
+                        
+                            <div class="sidebar-call centred wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="icon-box"><i class="flaticon-telephone"></i></div>
+                                <div class="text">Got any Questions?<br />CALL US NOW</div>
+                                {% for i in g_contact %}
+                                <h3 class="phone"><a href="{{ i.phone }}">{{ i.phone }}</a></h3>
+                                <div class="email"><a href="{{ i.email }}">{{ i.email }}</a></div>
+                                {% endfor %}
+                                <div class="link"><a href="#">Get Free Estimate</a></div>
+                            </div>
+                        
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-column">
-                    <div class="service-block-one overlay-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <img src="images/resource/service-8.jpg" alt="">
-                            <div class="overlay">
-                                <div class="wrapper">
-                                    <ul class="list">
-                                        <li><a href="manned-guarding.html"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>                                   
+                <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                    <div class="container">
+                            <div class="row">
+                                {% for i in management_term %}
+                                <div class="col-lg-6 col-md-12 col-sm-12 content-side">
+                                    <div class="container">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto">
+                                                    <div class="card" style="width: 20rem;">
+                                                        <img style="width: 318px;height: 238px; overflow: hidden; "  src="{{ i.image.url }}" class="card-img-top" alt="...">
+                                                        <div class="card-body">
+                                                            <h3 style="width: 278px;height: 30px; overflow: hidden; " >{{ i.name }}</h3>
+                                                            <h5 style="width: 278px;height: 30px; overflow: hidden; ">{{ i.position }}</h5>
+                                                        <p style="width: 278px;height: 52px; overflow: hidden; " class="card-text">{{ i.profile_details }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
                             </div>
-                        </figure>
-                        <div class="lower-content">
-                            <h3><a href="manned-guarding.html">Private Guards</a></h3>
-                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain  bound to ensue equal blame.</div>
-                            <div class="link"><a href="manned-guarding.html" class="btn-style-two">More Details</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-column">
-                    <div class="service-block-one overlay-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <img src="images/resource/service-9.jpg" alt="">
-                            <div class="overlay">
-                                <div class="wrapper">
-                                    <ul class="list">
-                                        <li><a href="manned-guarding.html"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>                                   
-                            </div>
-                        </figure>
-                        <div class="lower-content">
-                            <h3><a href="manned-guarding.html">Construction Sites</a></h3>
-                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain  bound to ensue equal blame.</div>
-                            <div class="link"><a href="manned-guarding.html" class="btn-style-two">More Details</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-column">
-                    <div class="service-block-one overlay-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <img src="images/resource/service-4.jpg" alt="">
-                            <div class="overlay">
-                                <div class="wrapper">
-                                    <ul class="list">
-                                        <li><a href="manned-guarding.html"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>                                    
-                            </div>
-                        </figure>
-                        <div class="lower-content">
-                            <h3><a href="manned-guarding.html">Key Holdings</a></h3>
-                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain  bound to ensue equal blame.</div>
-                            <div class="link"><a href="manned-guarding.html" class="btn-style-two">More Details</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-column">
-                    <div class="service-block-one overlay-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <img src="images/resource/service-5.jpg" alt="">
-                            <div class="overlay">
-                                <div class="wrapper">
-                                    <ul class="list">
-                                        <li><a href="manned-guarding.html"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>                                   
-                            </div>
-                        </figure>
-                        <div class="lower-content">
-                            <h3><a href="manned-guarding.html">CCTV & Alarm</a></h3>
-                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain  bound to ensue equal blame.</div>
-                            <div class="link"><a href="manned-guarding.html" class="btn-style-two">More Details</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 service-column">
-                    <div class="service-block-one overlay-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
-                        <figure class="image-box">
-                            <img src="images/resource/service-6.jpg" alt="">
-                            <div class="overlay">
-                                <div class="wrapper">
-                                    <ul class="list">
-                                        <li><a href="manned-guarding.html"><i class="fa fa-link"></i></a></li>
-                                    </ul>
-                                </div>                                   
-                            </div>
-                        </figure>
-                        <div class="lower-content">
-                            <h3><a href="manned-guarding.html">Static Security</a></h3>
-                            <div class="text">Pleasure of the moment blinded desire that they cannot forese trouble ths pain  bound to ensue equal blame.</div>
-                            <div class="link"><a href="manned-guarding.html" class="btn-style-two">More Details</a></div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- service-section end -->
-    {% endblock content %}  
+    
+    <!-- management term end -->
+
+    {% endblock content %}
+
+
+   
+
+

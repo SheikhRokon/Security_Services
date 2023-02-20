@@ -34,31 +34,33 @@
             <div class="container clearfix">
                 <div class="top-left">
                     <ul class="social clearfix">
-                        {% for i in g_contact %}
-                        <li><a href="{{ i.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="{{ i.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="{{ i.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
-                        <li><a href="{{ i.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
-                        {% endfor %}
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
-                {% for i in g_contact %}
-                <div class="top-right clearfix">
-                    <ul class="clearfix">
-                        <li class="upper-column">
-                            <i class="fa fa-phone-volume"></i>
-                            Call Us!: <a href="tel:0800546432">{{ i.phone }}</a>
-                        </li>
-                        <li class="upper-column">
-                            <i class="fa fa-envelope-square"></i>
-                            <a href="mailto:support@example.com">{{ i.email }}</a>
-                        </li>
-                        <li class="upper-column">
-                            <a href="#" class="upper-btn">Get Security Estimate</a>
-                        </li>
-                    </ul>
-                </div>
-                {% endfor %}
+                    
+                    {% for i in g_contact %}
+                    <div class="top-right clearfix">
+                        <ul class="clearfix">
+                            <li class="upper-column">
+                                <i class="fa fa-phone-volume"></i>
+                                Call Us!: <a href="tel:{{ i.phone_number1 }}">{{ i.phone_number1 }}</a> <a href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a>
+                            </li>
+                            <li class="upper-column">
+                                <i class="fa fa-envelope-square"></i>
+                                <a href="mailto:{{ i.email }}">{{ i.email }}</a>
+                            </li>
+                            <li class="upper-column">
+                                <a href="#" class="upper-btn">Get Security Estimate</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                        
+                
+                
                 
             </div>
         </div><!-- header-top end -->
@@ -101,7 +103,7 @@
                                         <ul>
        
                                             {% for i in g_service_s %}
-                                            <li><a href="service.html">{{ i.title }}</a></li>
+                                            <li><a href="{% url 'services_details-page' i.pk %}">{{ i.title }}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </li>
@@ -115,9 +117,9 @@
                                     </li>
                                     <li class="dropdown"><a href="#">Get IN Touch</a>
                                         <ul>
-                                            <li><a href="">Career </a></li>
-                                            <li><a href="">Notice </a></li>
-                                            <li><a href="">Certifieate Verifications </a></li>
+                                            <li><a href="{% url 'career-page' %}">Career </a></li>
+                                            <li><a href="{% url 'notice-page' %}">Notice </a></li>
+                                            <li><a href="{% url 'certifieateverification-page' %}">Certifieate Verifications </a></li>
                                         </ul>
                                     </li>
                                    
@@ -223,30 +225,32 @@
             <div class="container">
                 
                 <div class="row">
+                    
                     {% for i in g_contact %}
                     <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
                         <div class="logo-widget footer-widget wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <figure class="footer-logo"><a href="index.html"><img style="height: 218px; height: 40px; overflow: hidden; " src="{{ i.image.url }}" alt=""></a></figure>
                             <div style="height: 262.5px; height: 78px; overflow: hidden; " class="text">{{ i.detalis }}</div>
                             <ul class="info-box">
-                                <li style="height: 262.5px; height: 26.5px; overflow: hidden; " >Phone <a href="{{ i.phone }}">{{ i.phone }}</a></li>
-                                <li>Email <a href="{{ i.email }}">{{ i.email }}</a></li>
+                                <li style="height: 262.5px; height: 26.5px; overflow: hidden; " >Phone: <a href="tel:{{ i.phone_number1 }}">{{ i.phone_number1 }}</a></li> Phone: <a href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a></li>
+                                <li>Email <a href="mailto:{{ i.email }}">{{ i.email }}</a></li>
                             </ul>
                             <div style="height: 262.5px; height: 48px; overflow: hidden; " class="address">{{ i.address }}</div>
                         </div>
                     </div>
                     {% endfor %}
+
                     <div class="col-lg-3 col-md-6 col-sm-12 footer-column"  style="width: 292.5px;height: 291px; overflow: hidden; "  >
                         <div class="service-widget footer-widget wow fadeInUp" data-wow-delay="250ms" data-wow-duration="1500ms">
                             <div class="footer-title"><h4>Our Services</h4></div>
                             <ul class="service-list">
                                 {% for i in g_service_s %}
-                                <li><a href="#">{{ i.title }}</a></li>
+                                <li><a href="{% url 'services_details-page' i.pk %}">{{ i.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column" style="width: 292.5px;height: 291px; overflow: hidden; " >
+                    <div class="col-lg-3 col-md-6 col-sm-12 footer-column" style="width: 292.5px;height: 305px; overflow: hidden; " >
                         <div class="post-widget footer-widget wow fadeInUp" data-wow-delay="500ms">
                             <div class="footer-title"><h4>Recent News</h4></div>
                             {% for i in g_news %}
@@ -271,12 +275,12 @@
                                 </form>
                             </div>
                             <ul class="footer-social clearfix">
-                                {% for i in g_contact %}
+
                                 <li><a href="{{ i.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="{{ i.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="{{ i.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
                                 <li><a href="{{ i.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
-                                {% endfor %}
+
                             </ul>
                         </div>
                     </div>

@@ -41,8 +41,10 @@
                             <div class="sidebar-call centred wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <div class="icon-box"><i class="flaticon-telephone"></i></div>
                                 <div class="text">Got any Questions?<br />CALL US NOW</div>
-                                {% for i in g_contact %}<h3 class="phone"><a href="tel:0800-546-432">{{ i.phone }}</a></h3>{% endfor %}
-                                <div class="email"><a href="mailto:support@example.com">support@example.com</a></div>
+                                {% for i in g_contact %}
+                                <h3 class="phone"><a href="tel:0800-546-432">{{ i.phone }}</a></h3>
+                                <div class="email"><a href="{{ i.email }}">{{ i.email }}</a></div>
+                                {% endfor %}
                                 <div class="link"><a href="#">Get Free Estimate</a></div>
                             </div>
                         
@@ -61,12 +63,12 @@
                                     </div>
                                     <div style="height: 330px; overflow: hidden; margin-top: 5px; " class="col-lg-6 col-md-12 col-sm-12 text-column">
                                         <div class="text">
-                                            <p>{{ i.first_part }}</p>
+                                            <p>{{ i.first_part| safe}}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="text">{{ i.secend_part }}</div>
+                            <div class="text">{{ i.secend_part|safe }}</div>
                         </div>
                     {% endfor %}
 

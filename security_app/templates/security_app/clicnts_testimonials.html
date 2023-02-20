@@ -22,71 +22,20 @@
 
     <section class="news-section our-blog">
         <div class="container">
+            <h1 style="text-align: center;" >Clicnts Testimonials</h1>
             <div class="row">
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
+
+                {% for i in clicnts_testimonials %}
+                <div class="col-lg-2 col-md-4 col-sm-12 my-4  ">
                     <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
+                        <img style="width:190px ; height:142px;" src="{{ i.image.url }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <p class="card-text">some Example</p>
+                        <p style="width:150px ; height:27px;" class="card-text">{{ i.company_name }}</p>
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="col-lg-2 col-md-3 col-sm-6 my-4">
-                    <div class="card" style="width: 12rem;">
-                        <img src="{% static 'security_app/images/brand/1.jpg' %}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-text">some Example</p>
-                        </div>
-                    </div>
-                </div>     
+            {% endfor %}
+                 
             </div>
         </div>
 

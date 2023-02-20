@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class Banner(models.Model):
 
     titel = models.CharField(max_length = 150)
-    descriptions=models.CharField(max_length = 150)
+    descriptions= RichTextField(default='aaa')
     image = models.ImageField(upload_to='BannerImage',)
     url_http_link = models.CharField(max_length = 150,blank=True,null=True)
    
@@ -22,7 +22,7 @@ class Banner(models.Model):
 
 class About(models.Model):
     title = models.CharField( max_length=150)
-    descriptions = models.CharField( max_length=150)
+    descriptions = RichTextField(default='aaa')
     Video_link=models.URLField(max_length=200,blank=True,null=True)
 
 
@@ -40,7 +40,7 @@ class About(models.Model):
 class Service_Section(models.Model):
     image = models.ImageField(upload_to='ServiceImage',)
     title = models.CharField(max_length=100)
-    detalis = models.CharField(max_length=150)
+    detalis = RichTextField(default='aaa')
     
         
     def __str__(self):
@@ -187,19 +187,18 @@ class Testimonial_section(models.Model):
         return self.name
 
 class  Brand_section_Add(models.Model):
-    c_name = models.CharField(max_length=100,null=True)
+    Company_Name = models.CharField(max_length=100,null=True)
     logo = models.ImageField(upload_to='BrandSectionIogo')
-    company_link = models.CharField(max_length = 150,blank=True,null=True)
 
     class Meta:
         """Meta definition for  Brand_section."""
 
-        verbose_name = ' Brand_section'
-        verbose_name_plural = ' Brand_sections'
+        verbose_name = ' Brand_section_Add'
+        verbose_name_plural = ' Brand_section_Adds'
 
     def __str__(self):
         """Unicode representation of  Brand_section."""
-        return self.c_name
+        return self.Company_Name
 
 class News_section(models.Model):
     image = models.ImageField(upload_to='News_sectionImage')
@@ -232,29 +231,23 @@ class Our_blog(models.Model):
      
         return self.title        
 
-class Footer_section(models.Model):
+class Header_and_Footer(models.Model):
     image = models.ImageField(upload_to='Our_blog')
     detalis = models.CharField(max_length=150)
-    phone = models.CharField(max_length=100)
-    email =models.EmailField(max_length=254)
+    phone_number1 = models.CharField(max_length=16)
+    phone_number2 = models.CharField(max_length=16)
+    email =models.EmailField(max_length=100)
     address = models.CharField(max_length=100)
-    facebook_link = models.CharField(max_length = 150,blank=True,null=True)
-    instagram_link = models.CharField(max_length = 150,blank=True,null=True)
-    twitter_link = models.CharField(max_length = 150,blank=True,null=True)
-    google_plus_link = models.CharField(max_length = 150,blank=True,null=True)
-
-
-   
 
     class Meta:
         """Meta definition for Footer_section."""
 
-        verbose_name = 'Footer_section'
-        verbose_name_plural = 'Footer_sections'
+        verbose_name = 'Header_and_Footer'
+        verbose_name_plural = 'Header_and_Footers'
 
     def __str__(self):
         """Unicode representation of Footer_section."""
-        return self.phone
+        return self.phone_number1
 
 
 
@@ -272,9 +265,9 @@ class Other_Page_Image(models.Model):
 class Board_of_directors(models.Model):
 
     name = models.CharField(max_length=100,)
-    image = models.ImageField(upload_to='BoardOfDirectors',)
-    first_part = models.TextField(blank = True)
-    secend_part = models.TextField(blank = True)
+    image = models.ImageField(upload_to='BoardOfDirectors')
+    first_part = RichTextField(default='aaa')
+    secend_part = RichTextField(default='aaa')
     
     class Meta:
        
@@ -285,4 +278,122 @@ class Board_of_directors(models.Model):
     def __str__(self):
        
         return self.name
+
+class Management_term(models.Model):
+    image = models.ImageField(upload_to='Management_termImage')
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    profile_details = RichTextField(default='aaa')
+
+
+    class Meta:
+        """Meta definition for Management_term."""
+
+        verbose_name = 'Management_term'
+        verbose_name_plural = 'Management_terms'
+
+    def __str__(self):
+        """Unicode representation of Management_term."""
+        return self.name
+        
+class Clicnts_testimonials(models.Model):
+    image = models.ImageField(upload_to='Clicnts_testimonialsImage')
+    company_name = models.CharField(max_length=100)
+    class Meta:
+        """Meta definition for Clicnts_testimonials."""
+
+        verbose_name = 'Clicnts_testimonials'
+        verbose_name_plural = 'Clicnts_testimonialss'
+
+    def __str__(self):
+        """Unicode representation of Clicnts_testimonials."""
+        return self.company_name 
+
+class Contract_signing(models.Model):
+    image = models.ImageField(upload_to='Clicnts_testimonialsImage')
+    company_name = models.CharField(max_length=100)
+    class Meta:
+        """Meta definition for Clicnts_testimonials."""
+
+        verbose_name = 'Contract_signing'
+        verbose_name_plural = 'Contract_signings'
+
+    def __str__(self):
+        """Unicode representation of Clicnts_testimonials."""
+        return self.company_name
+
+class History(models.Model):
+    first_part = RichTextField(default='aaa')
+    image = models.ImageField(upload_to='HistoryImage')
+    secend_part = RichTextField(default='aaa')
+    company_name = models.CharField(max_length=50)
+    class Meta:
+        """Meta definition for Clicnts_testimonials."""
+
+        verbose_name = 'History'
+        verbose_name_plural = 'Historys'
+
+    def __str__(self):
+        """Unicode representation of Clicnts_testimonials."""
+        return self.company_name        
+
+class CSR_add_page(models.Model):
+    csr_date = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='CSRImage')
+    csr_details = RichTextField(default='aaa')
+
+    class Meta:
+        """Meta definition for CSR_add_page."""
+
+        verbose_name = 'CSR_add_page'
+        verbose_name_plural = 'CSR_add_pages'
+
+    def __str__(self):
+        """Unicode representation of CSR_add_page."""
+        return self.csr_date
+
+class Photo_gallery(models.Model):
+    image = models.ImageField(upload_to='Photo_galleryImage/', null=True)
+    details = RichTextField(default='aaa')
+
+    class Meta:
+        """Meta definition for Photo_gallery."""
+
+        verbose_name = 'Photo_gallery'
+        verbose_name_plural = 'Photo_gallerys'
+
+    def __str__(self):
+        """Unicode representation of Photo_gallery."""
+        return self.details
+
+class Video_gallery(models.Model):
+    video_head_line = models.CharField(max_length=50)
+    video_thumbnail = models.ImageField(upload_to='Photo_galleryThumbnail/', null=True)
+    video_link = models.CharField(max_length=200,null=True)
+    class Meta:
+        """Meta definition for Video_gallery."""
+
+        verbose_name = 'Video_gallery'
+        verbose_name_plural = 'Video_gallerys'
+
+    def __str__(self):
+        """Unicode representation of Video_gallery."""
+        return self.video_head_line
+
+class Job_Post(models.Model):
+    jop_type = models.CharField(max_length=40)
+    job_position = models.CharField(max_length=40)
+    vacancy = models.CharField(max_length=40)
+    last_date_of_application = models.CharField(max_length=40)
+    job_details = RichTextField(default='aaa')
+
+    class Meta:
+        """Meta definition for Job_Post."""
+
+        verbose_name = 'Job_Post'
+        verbose_name_plural = 'Job_Posts'
+
+    def __str__(self):
+        """Unicode representation of Job_Post."""
+        return self.job_position
         

@@ -1,0 +1,34 @@
+{% extends 'security_app/base.html' %}
+
+{% load static %}
+{% block content %}
+
+     <!-- page-title -->
+     {% for i in g_Other_Page_Image %}
+     <section class="page-title" style="background-image: url({{i.image.url}});">
+     {% endfor %}
+        <div class="container">
+            <div class="content-box">
+                <h1 class="title">Notice</h1>
+                <ul class="bread-crumb">
+                    <li><a href="{% url 'index-page' %}">Home</a></li>
+                    <li>Notice</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- page-title end -->
+
+
+    <section class="news-section our-blog">
+        <div class="container">
+           <h1 style="text-align: center;">Notice</h1>
+           <div style="width: 960px; height: auto; margin-left: 100px; " >
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt tempora, nulla et dolores minus ut sint explicabo, dolor iure ea recusandae eos dolore reprehenderit accusantium sed quaerat repellendus error voluptas.</p>
+           </div>
+        </div>
+
+    </section>
+
+    
+{% endblock content %}

@@ -23,42 +23,21 @@
     <section class="news-section our-blog">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto ">
+                
+                {% for i in video_gallery %}
+                <div class="col-lg-6 col-md-6 col-sm-12 my-4  ">
                     <div class="video-gallery wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <img src="{% static 'security_app/images/resource/video-img.jpg' %}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
+                        <img src="{{ i.video_thumbnail.url }}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
                         <div class="overlay-gallery">
                             <div class="icon-holder">
                                 <div class="icon" style="width: 555px; height: 271px; " >
-                                    <a class="html5lightbox" title="Video" href="{{ i.Video_link }}"><i class="fa fa-play"></i></a> 
+                                    <iframe width="560" height="315" src="{{ i.video_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                             </div>    
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto ">
-                    <div class="video-gallery wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <img src="{% static 'security_app/images/resource/video-img.jpg' %}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
-                        <div class="overlay-gallery">
-                            <div class="icon-holder">
-                                <div class="icon" style="width: 555px; height: 271px; " >
-                                    <a class="html5lightbox" title="Video" href="{{ i.Video_link }}"><i class="fa fa-play"></i></a> 
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 my-4 mx-auto ">
-                    <div class="video-gallery wow slideInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <img src="{% static 'security_app/images/resource/video-img.jpg' %}" style="width: 555px; height: 271px; " alt="Awesome Video Gallery">
-                        <div class="overlay-gallery">
-                            <div class="icon-holder">
-                                <div class="icon" style="width: 555px; height: 271px; " >
-                                    <a class="html5lightbox" title="Video" href="{{ i.Video_link }}"><i class="fa fa-play"></i></a> 
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 

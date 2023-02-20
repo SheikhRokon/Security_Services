@@ -26,45 +26,53 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
                     <div class="service-sidebar-content">
-                        <div class="sidebar-categories wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="sidebar-categories wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms" style="width: 350px;height: 344px; overflow: hidden;" >
+                            
                             <div class="sidebar-title"><h4>Our Services</h4></div>
-                            <ul class="categories-list">
-                                <li><a href="manned-guarding.html">Manned Guarding</a></li>
-                                <li class="active"><a href="event-security.html">The Events Security</a></li>
-                                <li><a href="security-installation.html">Security Installation</a></li>
-                                <li><a href="canine-security.html">Canine Security</a></li>
-                                <li><a href="mobile-security.html">Mobile Security</a></li>
-                                <li><a href="alarm-monitoring.html">Alarm Monitoring</a></li>
-                            </ul>
+                            {% for i in g_service_s %}
+                                <ul class="categories-list">
+                                    <li><a href="manned-guarding.html">{{ i.title }}</a></li>
+                                </ul>
+                            {% endfor %}
+                                
+                            
                         </div>
-                        <div class="sidebar-call centred wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <div class="icon-box"><i class="flaticon-telephone"></i></div>
-                            <div class="text">Got any Questions?<br />CALL US NOW</div>
-                            <h3 class="phone"><a href="tel:0800-546-432">0800-546-432</a></h3>
-                            <div class="email"><a href="mailto:support@example.com">support@example.com</a></div>
-                            <div class="link"><a href="#">Get Free Estimate</a></div>
-                        </div>
+                        
+                            <div class="sidebar-call centred wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <div class="icon-box"><i class="flaticon-telephone"></i></div>
+                                <div class="text">Got any Questions?<br />CALL US NOW</div>
+                                {% for i in g_contact %}
+                                <h3 class="phone"><a href="{{ i.phone }}">{{ i.phone }}</a></h3>
+                                <div class="email"><a href="{{ i.email }}">{{ i.email }}</a></div>
+                                {% endfor %}
+                                <div class="link"><a href="#">Get Free Estimate</a></div>
+                            </div>
+                        
                     </div>
                 </div>
+                
+                {% for i in history %}
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side">
                     <div class="service-details-content">
                         <div class="content-style-one">
                             <h2 class="title">Our Inception</h2>
                             <div class="text">
-                                <p>On the other hand, we denounce with righteous indignation and dislike men who are beguiled demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled.</p>
+                                <p>{{ i.first_part| safe }}</p>
                             </div>
-                            <figure class="image-box"><img src="images/resource/service-details1.jpg" alt=""></figure>
+                            <figure class="image-box"><img src="{{ i.image.url }}" alt=""></figure>
                             <div class="text">
-                                <p>And when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of dutys the obligations of busines it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man there fore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures or else he endures security.</p>
+                                <p>{{ i.secend_part| safe }}</p>
                             </div>
                         </div>
                        
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section>
     <!-- service-details end -->
+
 
     {% endblock content %}
 

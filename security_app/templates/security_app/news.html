@@ -23,31 +23,38 @@
     <!-- news-section -->
     <section class="news-section our-blog">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12 news-column mx-auto ">
-              <div class="news-block-one overlay-box wow fadeInUp" data-wow-delay="0ms">
-                  <figure class="image-box">
-                      <img src="{% static 'security_app/images/brand/brand-4.png' %}"  style="width: 36opx; height: 273px; " alt="">
-                      <div class="overlay">
-                          <div class="wrapper">
-                              <ul class="list">
-                                  <li><a href="blog-details.html"><i class="fa fa-link"></i></a></li>
-                              </ul>
-                          </div>                                    
-                      </div>
-                  </figure>
-                  <div class="lower-content">
-                      <h3 style="width: 289px; height: 56px;" ><a href="blog-details.html">How to Quickly Respond to Stop Attacks</a></h3>
-                      <ul class="post-meta" style="width: 289px; height: 27.5px; margin-top: 5px; " >
-                          <li><i class="far fa-folder-open"></i>Delta-One</li>
-                          <li><i class="far fa-calendar-alt"></i>26 Mar</li>
-                          
-                      </ul>
-                      <div class="text"  style='width: 289px; height: 78px;' >Pleasure of the moment blinded desire that they cannot forese trouble ths pain bound to ensue equal blame.</div>
-                      <div class="link"><a href="{% url 'blog_details-page' %}">Read More</a></div>
-                  </div>
-              </div>
+            <div class="title-box centred">
+                <div class="sec-title"><h2>security news articles</h2></div>
+                <div class="title-text">guards Strategies ensure proactive domination</div>
             </div>
+          <div class="row">
+            
+            {% for i in g_news %}
+            <div class="col-lg-4 col-md-6 col-sm-12 news-column">
+                <div class="news-block-one overlay-box wow fadeInUp" data-wow-delay="0ms">
+                    <figure class="image-box">
+                        <img src="{{ i.image.url }}"  style="width: 36opx; height: 273px; " alt="">
+                        <div class="overlay">
+                            <div class="wrapper">
+                                <ul class="list">
+                                    <li><a href="{% url 'news_details-page' i.pk %}"><i class="fa fa-link"></i></a></li>
+                                </ul>
+                            </div>                                    
+                        </div>
+                    </figure>
+                    <div class="lower-content">
+                        <h3 style="width: 289px; height: 56px; overflow: hidden;" ><a href="blog-details.html">{{ i.title }}</a></h3>
+                        <ul class="post-meta" style="width: 289px; height: 27.5px; margin-top: 5px; " >
+                            <li><i class="far fa-folder-open"></i>Delta-One</li>
+                            <li><i class="far fa-calendar-alt"></i>{{ i.date }}</li>
+                            
+                        </ul>
+                        <div style="width: 285px; height: 78px; overflow: hidden; " class="text">{{ i.detalis }}</div>
+                        <div class="link"><a href="{% url 'news_details-page' i.pk %}">Read More</a></div>
+                    </div>
+                </div>
+              </div> 
+            {% endfor %}
           </div>
             
         </div>

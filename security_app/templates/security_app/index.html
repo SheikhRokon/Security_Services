@@ -141,7 +141,7 @@
     <section class="service-section gray-bg sec-pad">
         <div class="container">
             <div class="title-box centred">
-                <div class="sec-title"><h2>.............. services</h2></div>
+                <div class="sec-title"><h2>Delta-One services</h2></div>
                 <div class="title-text">Strategies ensure proactive domination</div>
             </div>
             <div class="three-column-carousel">
@@ -152,15 +152,15 @@
                         <div class="overlay">
                             <div class="wrapper">
                                 <ul class="list">
-                                    <li><a href="{{ i.url_http_link }}"><i class="fa fa-link"></i></a></li>
+                                    <li><a href="{% url 'services_details-page' i.pk %}"><i class="fa fa-link"></i></a></li>
                                 </ul>
                             </div>                                    
                         </div>
                     </figure>
                     <div class="lower-content">
-                        <h3 style="width: 285px; height: 44px; " ><a href="{{ i.url_http_link }}">{{ i.title }}</a></h3>
-                        <div style="width: 285px; height: 75px; " class="text">{{ i.detalis }}</div>
-                        <div class="link"><a href="{{ i.url_http_link }}" class="btn-style-two">More Details</a></div>
+                        <h3 style="width: 285px; height: 44px; " ><a href="{% url 'services_details-page' i.pk %}">{{ i.title }}</a></h3>
+                        <div style="width: 285px; height: 75px; overflow: hidden; " class="text">{{ i.detalis| safe}}</div>
+                        <div class="link"><a href="{% url 'services_details-page' i.pk %}" class="btn-style-two">More Details</a></div>
                     </div>
                 </div>
                 {% endfor %}
@@ -398,7 +398,7 @@
     <!-- brand-section -->
     <section class="brand-section gray-bg sec-pad">
         <div class="container">
-            <div class="inner-content clearfix">
+            <div class="inner-content clearfix" style="width: 1140px;height: 253px; overflow: hidden;" >
                 <div class="title-box">
                     <div class="title"><h2>ACCREDITATIONS</h2></div>
                     <div class="text">Strategies ensure proactive</div>
@@ -406,7 +406,7 @@
                 <div class="brand-content wow zoomIn animated">
                     <ul class="brand-list clearfix">
                         {% for i in g_Brand_section_Add %} 
-                        <li class="image-box"><figure><a href="{{ i.company_link }}"><img src="{{ i.logo.url }}" alt=""></a></figure></li>
+                        <li class="image-box"><figure><a href="{% url 'our_clicnts-page' %}"><img style="width: 173px;height: 130px;" src="{{ i.logo.url }}" alt=""></a></figure></li>
                         {% endfor %}
                         
                     </ul>

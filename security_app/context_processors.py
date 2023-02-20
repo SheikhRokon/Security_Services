@@ -48,7 +48,8 @@ def G_Skill(requrest):
 
 
 def G_contact(requrest):
-    g_contact = Footer_section.objects.all().order_by("-id")[:1]
+    g_contact = Header_and_Footer.objects.all()
+    print(g_contact)
 
     context={
 
@@ -66,7 +67,7 @@ def G_Team_section(requrest):
     return context        
 
 def G_Brand_section_Add(requrest):
-    g_Brand_section_Add = Brand_section_Add.objects.all().order_by("-id")[:6]
+    g_Brand_section_Add = Brand_section_Add.objects.all().order_by("-id")[:5]
 
     context={
 

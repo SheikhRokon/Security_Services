@@ -93,3 +93,12 @@ def G_Other_Page_Image(requrest):
     }
     return context    
 
+def G_Social_media(requrest):
+    g_Social_media = Social_media.objects.first()
+    
+    context={
+
+        'g_Social_media': g_Social_media,
+    }
+    return context        
+

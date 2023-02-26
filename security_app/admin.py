@@ -26,6 +26,12 @@ admin.site.register(CSR_add_page)
 admin.site.register(Photo_gallery)
 admin.site.register(Video_gallery)
 admin.site.register(Job_Post)
+admin.site.register(Social_media)
+admin.site.register(Apply_form)
+
+
+
+
 
 
 

@@ -33,7 +33,7 @@
                     <div class="card-body">
                       <h5 class="card-title"><li><i class="fa-solid fa-briefcase"></i> {{ i.vacancy }} Open Position</li></h5>
                       <p class="card-text"><i class="fa-regular fa-clock"></i> Apply until {{ i.last_date_of_application }}</p>
-                      <a href="#" class="btn btn-primary" style="margin-top: 20px;" >View Details</a>
+                      <a href="{% url 'job_viewpage-page' i.pk %}" class="btn btn-primary" style="margin-top: 20px;" >View Details</a>
                     </div>
                   </div>
             </div>

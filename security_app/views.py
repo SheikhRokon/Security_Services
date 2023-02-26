@@ -26,6 +26,7 @@ def index(request):
     i_Gave_Protection_l = I_Gave_Protection_L.objects.all().order_by("-id")[:3]
     i_Gave_Protection_r = I_Gave_Protection_R.objects.all().order_by("-id")[:3]
     skill = Skill.objects.all().order_by("-id")[:3]
+    social_media = Social_media.objects.first()
 
 
 
@@ -51,6 +52,8 @@ def index(request):
         'i_Gave_Protection_l':i_Gave_Protection_l,
         'i_Gave_Protection_r':i_Gave_Protection_r,
         'skill':skill,
+        'social_media':social_media,
+
 
     }
     
@@ -194,3 +197,16 @@ def notice(request):
 
 def certifieateverification(request):
     return render(request, 'security_app/certifieateverification.html')
+
+def job_viewpage(request, pk):
+    job_view=Job_Post.objects.get(pk=pk)
+    context={
+        'job_view':job_view
+    }
+    return render(request, 'security_app/job_viewpage.html',context)
+
+def apply_from(request):
+    return render(request, 'security_app/apply_from.html')
+
+
+   

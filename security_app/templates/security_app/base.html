@@ -8,12 +8,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<title>Delta-one security.</title>
+<title>DELTA-ONE SECURITY </title>
 
 <!-- Stylesheets -->
 <link href="{% static 'security_app/css/style.css' %}" rel="stylesheet">
 <link href="{% static 'security_app/css/responsive.css' %}" rel="stylesheet">
-<link rel="icon" href="{% static 'security_app/images/favicon.ico' %}" type="image/x-icon">
+<link rel="icon" href="{% static 'security_app/images/favicon.png' %}" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
 
 </head>
@@ -32,21 +32,21 @@
         <!-- header-top -->
         <div class="header-top">
             <div class="container clearfix">
-                <div class="top-left">
+                <!-- <div class="top-left">
                     <ul class="social clearfix">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="{{ g_Social_media.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ g_Social_media.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ g_Social_media.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="{{ g_Social_media.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
                     </ul>
-                </div>
+                </div> -->
                     
                     {% for i in g_contact %}
                     <div class="top-right clearfix">
                         <ul class="clearfix">
-                            <li class="upper-column">
+                            <li class="upper-column float-left">
                                 <i class="fa fa-phone-volume"></i>
-                                Call Us!: <a href="tel:{{ i.phone_number1 }}">{{ i.phone_number1 }}</a> <a href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a>
+                                Call Us!: <a href="tel:{{ i.phone_number1 }}" >{{ i.phone_number1 }}</a> <a href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a>
                             </li>
                             <li class="upper-column">
                                 <i class="fa fa-envelope-square"></i>
@@ -68,9 +68,9 @@
         <!-- header-bottom -->
         <div class="container">
             <div class="header-bottom">
-                <div class="nav-outer clearfix">
+                <div class="nav-outer clearfix" >
                     <div class="logo-outer">
-                        <figure class="logo-box"><a href="{% url 'index-page' %}"><img src="{% static 'security_app/images/logo.png' %}" alt=""></a></figure>
+                        <figure class="logo-box"><a href="{% url 'index-page' %}"><img src="{% static 'security_app/images/logo1.png' %}" alt=""></a></figure>
                     </div>
                     <div class="menu-area clearfix">
                         <nav class="main-menu navbar-expand-lg">
@@ -131,12 +131,12 @@
                                 </ul>
                             </div>
                         </nav>
-                        <div class="outer-box">
+                        <!-- <div class="outer-box">
                             <div class="search-outer">
                                 <div class="search-box-area">
                                     <div class="search-toggle"><i class="fa fa-search"></i></div>
                                     <div class="search-box">
-                                        <form method="post" action="http://azim.commonsupport.com/ZenRaiford/index.html">
+                                        <form method="post" action="#">
                                             <div class="form-group">
                                                 <input type="search" name="search" placeholder="Search Here" required>
                                                 <button type="submit"><i class="fa fa-search"></i></button>
@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
         <!--Sticky Header-->
         <div class="sticky-header">
             <div class="container clearfix">
-                <figure class="logo-box"><a href="index.html"><img src="{% static 'security_app/images/small-logo.png' %}" alt=""></a></figure>
+                <figure class="logo-box"><a href="index.html"><img src="{% static 'security_app/images/logo2.png' %}" alt=""></a></figure>
                 <div class="menu-area">
                     <nav class="main-menu navbar-expand-lg">
                         <div class="navbar-header">
@@ -167,47 +167,52 @@
                             </button>
                         </div>
                         <div class="navbar-collapse collapse clearfix">
-                            <div class="navbar-collapse collapse clearfix">
-                                <ul class="navigation clearfix">
-                                    <li><a href="{% url 'index-page' %}">Home</a></li>
-                                    
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="{% url 'about-page' %}">About Us </li>
-                                            <li><a href="{% url 'blog-page' %}">Our Blog </li>
-                                            <li><a href="{% url 'board_of_directors-page' %}">Board of Directors</li>
-                                            <li><a href="{% url 'management_term-page' %}">Management Team </a></li>
-                                            <li><a href="{% url 'our_clicnts-page' %}">Our Clients </a></li>
-                                            <li><a href="{% url 'clicnts_testimonials-page' %}">Clients Testimonials</a></li>
-                                            <li><a href="{% url 'contract_signing-page' %}">Contract signing </a></li>
-                                            <li><a href="{% url 'history-page' %}">History</a></li>
+                            <ul class="navigation clearfix">
+                                <li><a href="{% url 'index-page' %}">Home</a></li>
+                                
+                                <li class="dropdown"><a href="#">About</a>
+                                    <ul>
+                                        <li><a href="{% url 'about-page' %}">About Us </li>
+                                        <li><a href="{% url 'blog-page' %}">Our Blog </li>
+                                        <li><a href="{% url 'board_of_directors-page' %}">Board of Directors</li>
+                                        <li><a href="{% url 'management_term-page' %}">Management Team </a></li>
+                                        <li><a href="{% url 'our_clicnts-page' %}">Our Clicnts </a></li>
+                                        <li><a href="{% url 'clicnts_testimonials-page' %}">Clicnts Testimonials </a></li>
+                                        <li><a href="{% url 'contract_signing-page' %}">Contract signing </a></li>
+                                        <li><a href="{% url 'history-page' %}">History</a></li>
 
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">SERVICES</a>
-                                        <ul>
-       
-                                            {% for i in g_service_s %}
-                                            <li><a href="service.html">{{ i.title }}</a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% url 'news-page' %}">News</a></li>
-                                    <li><a href="{% url 'csr-page' %}">CSR </a></li>
-                                    <li><a href="{% url 'career-page' %}">Career </a></li> 
-                                    <li class="dropdown"><a href="#">Media</a>
-                                        <ul>
-                                            <li><a href="{% url 'photo_gallery-page' %}">Photo Gallery</a></li>
-                                            <li><a href="{% url 'video_gallery-page' %}">Video Gallery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% url 'contact-page' %}">Contact Us </a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">SERVICES</a>
+                                    <ul>
+   
+                                        {% for i in g_service_s %}
+                                        <li><a href="{% url 'services_details-page' i.pk %}">{{ i.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'news-page' %}">News</a></li>
+                                <li><a href="{% url 'csr-page' %}">CSR </a></li>
+                                <li class="dropdown"><a href="#">Media</a>
+                                    <ul>
+                                        <li><a href="{% url 'photo_gallery-page' %}">Photo Gallery</a></li>
+                                        <li><a href="{% url 'video_gallery-page' %}">Video Gallery</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">Get IN Touch</a>
+                                    <ul>
+                                        <li><a href="{% url 'career-page' %}">Career </a></li>
+                                        <li><a href="{% url 'notice-page' %}">Notice </a></li>
+                                        <li><a href="{% url 'certifieateverification-page' %}">Certifieate Verifications </a></li>
+                                    </ul>
+                                </li>
+                               
+                                <li><a href="{% url 'contact-page' %}">Contact Us </a></li>
 
 
 
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
                     </nav>
                 </div>
@@ -221,7 +226,7 @@
 
     <!-- footer-section -->
     <footer class="main-footer">
-        <div class="footer-top">
+        <div class="footer-top" style="margin-top: 0%;" >
             <div class="container">
                 
                 <div class="row">
@@ -267,7 +272,8 @@
                             <div class="footer-title"><h4>Newsletter</h4></div>
                             <div class="text">Get all the latest security & Threat  news and about Deltaone-security.</div>
                             <div class="newsletter-form">
-                                <form action="http://azim.commonsupport.com/ZenRaiford/contact.html" method="post">
+                                <form action="#" method="post">
+                                    {% csrf_token %}
                                     <div class="form-group">
                                         <input type="email" name="email" placeholder="Email" required="">
                                         <button type="submit"><i class="fas fa-paper-plane"></i></button>
@@ -275,12 +281,13 @@
                                 </form>
                             </div>
                             <ul class="footer-social clearfix">
-
-                                <li><a href="{{ i.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="{{ i.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="{{ i.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href="{{ i.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
-
+                    
+                            <li><a href="{{ g_Social_media.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{ g_Social_media.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="{{ g_Social_media.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="{{ g_Social_media.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
+        
+                                
                             </ul>
                         </div>
                     </div>
@@ -290,7 +297,7 @@
         </div>
         <div class="footer-bottom centred">
             <div class="container">
-                <div> </div>
+                <div class="copyright">Copyright &copy; 2023 <a href="#">Delta-One security</a> All rights reserved.</div>
             </div>
         </div>
     </footer>

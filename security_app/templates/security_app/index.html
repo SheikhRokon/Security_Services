@@ -89,7 +89,7 @@
                 <div class="row">
                     <div class="col-lg-9 col-md-12 col-sm-12 offset-lg-3 form-column">
                         <div class="title-box centred">
-                            <div class="form-title"><h2>Request ZEN for an Estimate</h2></div>
+                            <div class="form-title"><h2>Request Delta-One for an Estimate</h2></div>
                             <div class="text">Survival strategies to ensure proactive domination </div>
                         </div>
                         <div class="form-content">
@@ -461,7 +461,8 @@
                 {% for i in g_contact %}
                 <div class="call-content wow zoomIn animated">
                     <div class="icon-box"><i class="fa fa-phone-volume"></i></div>
-                    <h2 class="title">Dedicated Security Services, Call <a href="{{ i.phone }}">{{ i.phone }}</a></h2>
+                        <h2 class="title">Dedicated Security Services, Call <a href="tel:{{ i.phone_number1 }}">{{ i.phone_number1 }}</a> , <a href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a>
+                    </h2>
                     <div class="text">Our customers everywhere trust our fully accredited and tailored guard solutions</div>
                 </div>
                 {% endfor %}

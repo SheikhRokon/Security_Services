@@ -75,6 +75,8 @@ TEMPLATES = [
                 'security_app.context_processors.G_Team_section',
                 'security_app.context_processors.G_Brand_section_Add',
                 'security_app.context_processors.G_Other_Page_Image',
+                'security_app.context_processors.G_Social_media',
+
 
 
 

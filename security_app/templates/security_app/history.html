@@ -42,8 +42,9 @@
                                 <div class="icon-box"><i class="flaticon-telephone"></i></div>
                                 <div class="text">Got any Questions?<br />CALL US NOW</div>
                                 {% for i in g_contact %}
-                                <h3 class="phone"><a href="{{ i.phone }}">{{ i.phone }}</a></h3>
-                                <div class="email"><a href="{{ i.email }}">{{ i.email }}</a></div>
+                                <h3 class="phone"><a href="tel:{{ i.phone_number1 }}">{{ i.phone_number1 }}</a></h3>
+                                <h3 class="phone"><a href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a></a></h3>
+                                <div class="email"><a href="mailto:{{ i.email }}">{{ i.email }}</a></div>
                                 {% endfor %}
                                 <div class="link"><a href="#">Get Free Estimate</a></div>
                             </div>
@@ -59,7 +60,7 @@
                             <div class="text">
                                 <p>{{ i.first_part| safe }}</p>
                             </div>
-                            <figure class="image-box"><img src="{{ i.image.url }}" alt=""></figure>
+                            <figure class="image-box" ><img  style="width: 700px; height: 500px; " src="{{ i.image.url }}" alt=""></figure>
                             <div class="text">
                                 <p>{{ i.secend_part| safe }}</p>
                             </div>

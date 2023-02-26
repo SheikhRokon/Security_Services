@@ -385,7 +385,8 @@ class Job_Post(models.Model):
     job_position = models.CharField(max_length=40)
     vacancy = models.CharField(max_length=40)
     last_date_of_application = models.CharField(max_length=40)
-    job_details = RichTextField(default='aaa')
+    job_banner_image = models.ImageField(upload_to='JobBannerImage',null=True)
+    job_details = RichTextField()
 
     class Meta:
         """Meta definition for Job_Post."""
@@ -396,4 +397,40 @@ class Job_Post(models.Model):
     def __str__(self):
         """Unicode representation of Job_Post."""
         return self.job_position
+        
+class Social_media(models.Model):
+    facebook_link = models.URLField(max_length=80,blank=True)
+    facebook_link = models.URLField(max_length=80,blank=True)
+    instagram_link = models.URLField(max_length=80,blank=True)
+    twitter_link = models.URLField(max_length=80,blank=True)
+    google_plus_link = models.URLField(max_length=80,blank=True)
+    company_name = models.CharField(max_length=80)
+
+    class Meta:
+        """Meta definition for Social_media."""
+
+        verbose_name = 'Social_media'
+        verbose_name_plural = 'Social_medias'
+
+    def __str__(self):
+        """Unicode representation of Social_media."""
+        return self.company_name
+
+class Apply_form(models.Model):
+    first_name = models.CharField( max_length=100)
+    last_name = models.CharField( max_length=100)
+    email = models.EmailField( max_length=150)
+    phone = models.CharField( max_length=13)
+    address = models.CharField( max_length=150)
+    massege = models.CharField( max_length=500)
+
+    class Meta:
+        """Meta definition for Apply_form."""
+
+        verbose_name = 'Apply_form'
+        verbose_name_plural = 'Apply_forms'
+
+    def __str__(self):
+        """Unicode representation of Apply_form."""
+        return self.first_name
         

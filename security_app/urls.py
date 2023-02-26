@@ -23,6 +23,10 @@ urlpatterns = [
     path('notice-us/',notice,name='notice-page' ),
     path('certifieateverification-us/',certifieateverification,name='certifieateverification-page' ),
     path('csr_details-us/ <pk>',csr_details,name='csr_details-page' ),
+    path('job_viewpage-us/ <pk>',job_viewpage,name='job_viewpage-page' ),
+    path('apply_from-us/',apply_from,name='apply_from-page' ),
+
+
 
 
 

@@ -1,114 +1,112 @@
-
 {% extends 'security_app/base.html' %}
 
 {% load static %}
 {% block content %}
 
 
-    <!-- page-title -->
-    {% for i in g_Other_Page_Image %}
-    <section class="page-title" style="background-image: url({{i.image.url}});">
+<!-- page-title -->
+{% for i in g_Other_Page_Image %}
+<section class="page-title" style="background-image: url({{i.image.url}});">
     {% endfor %}
-        <div class="container">
-            <div class="content-box">
-                <h1 class="title">Contact us</h1>
-                <ul class="bread-crumb">
-                    <li><a href="{% url 'index-page' %}">Home</a></li>
-                    <li>Contact</li>
-                </ul>
+    <div class="container">
+        <div class="content-box">
+            <h1 class="title">Contact us</h1>
+            <ul class="bread-crumb">
+                <li><a href="{% url 'index-page' %}">Home</a></li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- page-title end -->
+
+
+<!-- contact-section -->
+<section class="contact-section sec-pad">
+    <div class="container">
+        <div class="title-box centred">
+            <div class="title">
+                <h2><span>Delta-one,</span> We are always<br />committed to protect you!</h2>
             </div>
         </div>
-    </section>
-    <!-- page-title end -->
-
-
-    <!-- contact-section -->
-    <section class="contact-section sec-pad">
-        <div class="container">
-            <div class="title-box centred">
-                <div class="title"><h2><span>At ZenRaiford,</span> We are always<br />committed to protect you!</h2></div>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12 contact-column">
+                <div class="contact-info">
+                    <div class="title">
+                        <h3>Contact Info</h3>
+                    </div>
+                    <div class="info-box">
+                        {% for i in g_contact %}
+                        <div class="single-info">
+                            <h5>Address</h5>
+                            <div class="text">{{ i.address }}</div>
+                        </div>
+                        <div class="single-info">
+                            <h5>Phone</h5>
+                            <div class="text"><a href="tel:{{ i.phone_number1 }}">{{ i.phone_number1 }}</a>, <a
+                                    href="tel:{{ i.phone_number2 }}">{{ i.phone_number2 }}</a></div>
+                        </div>
+                        <div class="single-info">
+                            <h5>Email</h5>
+                            <div class="text"><a href="mailto:{{ i.email }}">{{ i.email }}</a></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <ul class="social clearfix">
+                        <li><a href="{{ g_Social_media.facebook_link }}"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="{{ g_Social_media.instagram_link }}"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="{{ g_Social_media.twitter_link }}"><i class="fab fa-google-plus-g"></i></a></li>
+                        <li><a href="{{ g_Social_media.google_plus_link }}"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12 contact-column">
-                    <div class="contact-info">
-                        <div class="title"><h3>Contact Info</h3></div>
-                        <div class="info-box">
-                            <div class="single-info">
-                                <h5>Address</h5>
-                                <div class="text">514 S. Magnolia St. Orlando, FL 32806</div>
+            <div class="col-lg-8 col-md-12 col-sm-12 form-column">
+                <div class="contact-form-area">
+                    <form method="post" action="http://azim.commonsupport.com/ZenRaiford/sendemail.php"
+                        id="contact-form">
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                <input type="text" name="username" placeholder="Full Name" required>
                             </div>
-                            <div class="single-info">
-                                <h5>Phone</h5>
-                                <div class="text"><a href="tel:0800564432">0800 564 432</a>, <a href="tel:1-789-415-639">1-789-415-639</a></div>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                <input type="email" name="email" placeholder="Email address" required>
                             </div>
-                            <div class="single-info">
-                                <h5>Email</h5>
-                                <div class="text"><a href="mailto:support@example.com">support@example.com</a><br /><a href="mailto:inquiry@example.com">inquiry@example.com</a></div>
+                            <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                <input type="text" name="phone" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                                <input type="text" name="subject" placeholder="Service Inquiry" required>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 clearfix">
+                                <div class="contact-btn">
+                                    <button type="submit" name="submit-form">SUBMIT</button>
+                                </div>
                             </div>
                         </div>
-                        <ul class="social clearfix">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-12 col-sm-12 form-column">
-                    <div class="contact-form-area">
-                        <form method="post" action="http://azim.commonsupport.com/ZenRaiford/sendemail.php" id="contact-form">
-                            <div class="row">
-                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                    <input type="text" name="username" placeholder="Full Name" required>
-                                </div>
-                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                    <input type="email" name="email" placeholder="Email address" required>
-                                </div>
-                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
-                                    <input type="text" name="phone" placeholder="Phone" required>
-                                </div>
-                                <div class="form-group col-lg-6 col-md-12 col-sm-12">
-                                    <input type="text" name="subject" placeholder="Service Inquiry" required>
-                                </div>
-                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                    <textarea name="message" placeholder="Message"></textarea>
-                                </div>
-                                <div class="form-group col-lg-12 col-md-12 col-sm-12 clearfix">
-                                    <div class="contact-btn">
-                                        <button type="submit" name="submit-form">SUBMIT</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- contact-section end -->
+    </div>
+</section>
+<!-- contact-section end -->
 
 
-    <!-- google-map -->
-    <section class="google-map-section">
-        <div class="google-map-area">
-            <div 
-                class="google-map" 
-                id="contact-google-map" 
-                data-map-lat="46.897960" 
-                data-map-lng="4.549660" 
-                data-icon-path="images/icons/map-marker.png"  
-                data-map-title="Brooklyn, New York, United Kingdom" 
-                data-map-zoom="12" 
-                data-markers='{
+<!-- google-map -->
+<section class="google-map-section">
+    <div class="google-map-area">
+        <div class="google-map" id="contact-google-map" data-map-lat="46.897960" data-map-lng="4.549660"
+            data-icon-path="images/icons/map-marker.png" data-map-title="Brooklyn, New York, United Kingdom"
+            data-map-zoom="12" data-markers='{
                     "marker-1": [46.897960, 4.549660, "<h4>Branch Office</h4><p>77/99 London UK</p>","images/icons/map-marker.png"]
                 }'>
 
-            </div>
         </div>
-    </section>
-    <!-- google-map end -->
+    </div>
+</section>
+<!-- google-map end -->
 
 {% endblock content %}
-
-

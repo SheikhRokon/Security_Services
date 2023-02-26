@@ -132,6 +132,7 @@
     <!-- cta-section end -->
 
 
+   
     <!-- team-section -->
     <section class="team-section centred sec-pad">
         <div class="container">
@@ -139,12 +140,12 @@
                 <div class="sec-title"><h2>team of expert guards</h2></div>
                 <div class="title-text">Strategies ensure proactive domination</div>
             </div>
-            <div class="row">
+            <div class="row" >
                 {% for i in g_Team_section %}
-                <div class="col-lg-3 col-md-6 col-sm-12 team-column">
-                    <div class="single-team-content overlay-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                <div class="col-lg-3 col-md-6 col-sm-12 team-column"  >
+                    <div class="single-team-content overlay-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms"  >
                         <figure class="image-box">
-                            <img src="{{ i.image.url }}" alt="">
+                            <img style="width: 262.5px; height: 379.7px; " src="{{ i.image.url }} " alt="">
                             <div class="overlay">
                                 <div class="wrapper">
                                     <div class="top-content">
@@ -172,10 +173,10 @@
     <!-- team-section end -->
 
 
-    <!-- brand-section -->
-    <section class="brand-section gray-bg sec-pad">
+     <!-- brand-section -->
+     <section class="brand-section gray-bg sec-pad">
         <div class="container">
-            <div class="inner-content clearfix">
+            <div class="inner-content clearfix" style="width: 1140px;height: 253px; overflow: hidden;" >
                 <div class="title-box">
                     <div class="title"><h2>ACCREDITATIONS</h2></div>
                     <div class="text">Strategies ensure proactive</div>
@@ -183,7 +184,7 @@
                 <div class="brand-content wow zoomIn animated">
                     <ul class="brand-list clearfix">
                         {% for i in g_Brand_section_Add %} 
-                        <li class="image-box"><figure><a href="{{ i.company_link }}"><img src="{{ i.logo.url }}" alt=""></a></figure></li>
+                        <li class="image-box"><figure><a href="{% url 'our_clicnts-page' %}"><img style="width: 173px;height: 130px;" src="{{ i.logo.url }}" alt=""></a></figure></li>
                         {% endfor %}
                         
                     </ul>
